@@ -21,4 +21,4 @@ jobs:
       - name: Test info
         run: |
           echo "Name of the brench ${{ github.ref }} and repository is ${{ github.repository }} "
-          echo "Current event ${{ github.event }}"
+          echo "Current event ${{ github.event_name }}"

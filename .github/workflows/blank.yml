@@ -1,0 +1,24 @@
+name: CI
+run-name:  ${{ github.actor }} runs the tests
+
+env:
+  GITHUB_ACTIONS: github-task-job
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  github-task-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: GitHub action
+        run: echo "Github actions is ${{env.GITHUB_ACTIONS}} "
+
+      - name: Test info
+        run: |
+          echo "Name of the brench ${{ github.ref }} and repository is ${{ github.repository }} "
+          echo "Current event ${{ github.event }}"
